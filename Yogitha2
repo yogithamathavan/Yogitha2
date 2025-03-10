@@ -1,0 +1,51 @@
+*app.py* (Python)
+```
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run()
+```
+
+*templates/index.html* (HTML)
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mathavan Yogitha</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="frame">
+        <h1>Mathavan Yogitha</h1>
+    </div>
+</body>
+</html>
+```
+
+*static/style.css* (CSS)
+```
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.frame {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 50px auto;
+}
+
+.frame h1 {
+    color: #333;
+    font-size: 24px;
